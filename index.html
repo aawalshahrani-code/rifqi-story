@@ -274,3 +274,35 @@ document.getElementById("send").addEventListener("click",()=>{
 </script>
 </body>
 </html>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+
+  hero.style.position = "relative";
+
+  const buttons = [
+    {name:"عن البرنامج", href:"#about", x:65, y:53},
+    {name:"القصص", href:"#stories", x:51, y:53},
+    {name:"الأنشطة", href:"#activities", x:38, y:53},
+    {name:"شارك قصتك", href:"#share", x:25, y:53}
+  ];
+
+  buttons.forEach(b => {
+    const a = document.createElement("a");
+    a.href = b.href;
+    a.setAttribute("aria-label", b.name);
+    a.title = b.name;
+    Object.assign(a.style, {
+      position:"absolute",
+      left:b.x+"%",
+      top:b.y+"%",
+      width:"13%",
+      height:"6%",
+      cursor:"pointer",
+      zIndex:"10"
+    });
+    hero.appendChild(a);
+  });
+});
+</script>
