@@ -1,113 +1,419 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>رفقي يحكي قصتي</title>
-
+<title>رفقي يحكي قصتي | مدارس الأندلس الصغيرة العالمية</title>
 <style>
-body {
-  margin: 0;
-  font-family: Tahoma, Arial, sans-serif;
-  background: #fff5f9;
-  color: #66364d;
-  text-align: center;
+:root{
+  --blue:#dff5ff;
+  --pink:#ffe2ee;
+  --green:#e2f6df;
+  --purple:#8055aa;
+  --ink:#34445b;
 }
-
-header {
-  background: linear-gradient(135deg, #ffd5e7, #fff0f6);
-  padding: 35px 15px;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(160deg,#e4f7ff,#fff6fa 55%,#e8f8e6);
+  line-height:1.8;
 }
-
-.logo {
-  max-width: 290px;
-  width: 85%;
-  margin-bottom: 20px;
+header{
+  background:#ffffffed;
+  padding:15px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  box-shadow:0 3px 15px #8296aa20;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
-
-h1 {
-  color: #c43e7a;
-  font-size: 38px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:bold;
+  color:var(--purple);
 }
-
-h2 {
-  color: #c43e7a;
+.brand img{
+  width:75px;
+  height:65px;
+  object-fit:contain;
 }
-
-.card {
-  background: white;
-  margin: 25px auto;
-  padding: 25px;
-  max-width: 650px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px #e8c9d7;
+nav{display:flex;flex-wrap:wrap;gap:15px}
+nav a{
+  color:#48536b;
+  text-decoration:none;
+  font-weight:bold;
 }
-
-button {
-  background: #d94f91;
-  color: white;
-  border: none;
-  padding: 14px 30px;
-  border-radius: 25px;
-  font-size: 17px;
-  cursor: pointer;
+nav a:hover{color:#dd639c}
+.hero{
+  position:relative;
+  text-align:center;
+  padding:85px 20px 90px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#bcecff,#eafaff 70%,#e2f6df);
 }
-
-footer {
-  background: #f8d7e6;
-  padding: 25px;
-  margin-top: 40px;
+.hero h1{
+  font-size:clamp(35px,7vw,70px);
+  color:#8055aa;
+  margin:12px 0;
+  text-shadow:3px 4px #ffffff;
+}
+.hero p{font-size:clamp(17px,3vw,24px)}
+.sun{font-size:65px;animation:float 4s ease-in-out infinite}
+.kids{font-size:70px;margin:20px 0}
+.float{
+  position:absolute;
+  font-size:35px;
+  animation:float 4s ease-in-out infinite;
+}
+.f1{top:12%;right:8%}
+.f2{top:28%;left:9%;animation-delay:1s}
+.f3{bottom:15%;right:17%;animation-delay:2s}
+.f4{bottom:20%;left:15%;animation-delay:.6s}
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(-5deg)}
+  50%{transform:translateY(-18px) rotate(7deg)}
+}
+.btn{
+  display:inline-block;
+  border:0;
+  border-radius:30px;
+  padding:13px 25px;
+  background:linear-gradient(90deg,#f18cbb,#9b80df);
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  text-decoration:none;
+  cursor:pointer;
+  transition:.25s;
+}
+.btn:hover{transform:scale(1.05)}
+section{padding:55px 6%;text-align:center}
+h2{font-size:30px;color:#8153a9;margin:0 0 20px}
+.intro{
+  max-width:800px;
+  margin:auto;
+  font-size:19px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  max-width:1050px;
+  margin:25px auto;
+}
+.card{
+  background:white;
+  border-radius:25px;
+  padding:30px 20px;
+  box-shadow:0 8px 25px #8ba6b02b;
+  transition:.3s;
+}
+.card:hover{transform:translateY(-8px)}
+.emoji{font-size:55px}
+.card h3{color:#a35fa3}
+.story-area{background:#f8ecff}
+.activity-area{background:#eaf9ec}
+.form-box{
+  max-width:650px;
+  margin:25px auto;
+  padding:30px;
+  background:white;
+  border-radius:28px;
+  box-shadow:0 10px 30px #a8a3ba35;
+  text-align:right;
+}
+label{
+  display:block;
+  margin:14px 0 5px;
+  font-weight:bold;
+}
+select,input[type=file]{
+  width:100%;
+  padding:13px;
+  border:2px solid #e7d9f5;
+  border-radius:14px;
+  background:#fcfaff;
+  font:inherit;
+}
+select:focus,input:focus{
+  outline:2px solid #bc9bdb;
+}
+video{
+  display:none;
+  width:100%;
+  max-height:350px;
+  margin-top:15px;
+  border-radius:15px;
+  background:#202020;
+}
+.notice{
+  background:#fff7d9;
+  padding:13px;
+  border-radius:14px;
+  font-size:14px;
+  margin:15px 0;
+}
+#message{
+  font-weight:bold;
+  color:#8153a9;
+  margin-top:15px;
+}
+footer{
+  background:#8066aa;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+@media(max-width:650px){
+  header{justify-content:center}
+  nav{justify-content:center;font-size:13px}
+  .kids{font-size:50px}
+  .float{font-size:25px}
+  section{padding:40px 5%}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <img src="logo.jpeg.jpeg"
-       alt="شعار مدارس الأندلس الصغيرة العالمية"
-       class="logo">
-
-  <h1>🌸 رفقي يحكي قصتي 🌸</h1>
-  <p>بالرفق نزرع المحبة ونصنع أجمل الحكايات</p>
+  <div class="brand">
+    <img src="logo.jpeg.jpeg" alt="شعار المدرسة"
+         onerror="this.style.display='none'">
+    <span>مدارس الأندلس الصغيرة العالمية</span>
+  </div>
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#about">عن البرنامج</a>
+    <a href="#stories">قصص ملهمة</a>
+    <a href="#activities">الأنشطة</a>
+    <a href="#share">شارك قصتك</a>
+  </nav>
 </header>
 
-<section class="card">
-  <h2>💗 عن البرنامج</h2>
-  <p>
-    برنامج إرشادي تربوي يهدف إلى غرس قيمة
-    الرفق واللين في نفوس الطلاب والطالبات،
-    وتعزيز الرحمة والتعاون والاحترام،
-    بمشاركة الأسرة في المواقف اليومية.
-  </p>
-</section>
+<main>
+  <div class="hero" id="home">
+    <span class="float f1">🦋</span>
+    <span class="float f2">💖</span>
+    <span class="float f3">🌼</span>
+    <span class="float f4">⭐</span>
+    <div class="sun">☀️</div>
+    <h1>رفقي يحكي قصتي</h1>
+    <p>بالرفق نزرع المحبة ونصنع أجمل الحكايات</p>
+    <div class="kids">👦🏻 🌈 👧🏻</div>
+    <a href="#share" class="btn">🎥 شارك قصتك</a>
+  </div>
 
-<section class="card">
-  <h2>📹 شاركنا حكاية الرفق</h2>
-  <p>
-    صوّر موقفًا يعبر عن قيمة الرفق
-    وشاركنا حكايتك الجميلة.
-  </p>
-  <p>
-    سيتم تفعيل استقبال المشاركات بعد
-    تجهيز نظام الرفع والمراجعة.
-  </p>
-  <button disabled>رفع المشاركة قريبًا</button>
-</section>
+  <section id="about">
+    <h2>💕 عن البرنامج</h2>
+    <p class="intro">
+      في مدارس الأندلس الصغيرة العالمية،
+      نؤمن أن الرفق يصنع فرقًا جميلًا في حياتنا.
+      هنا يحكي أطفالنا مواقفهم اللطيفة
+      وينشرون قيم الرحمة والتعاون والاحترام.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <div class="emoji">🤝</div>
+        <h3>نتعاون</h3>
+        <p>نساعد أصدقاءنا ونقف بجانبهم.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">💗</div>
+        <h3>نرفق</h3>
+        <p>نتعامل بلطف مع الجميع.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">🌟</div>
+        <h3>نلهم</h3>
+        <p>نشارك قصصًا تنشر الخير.</p>
+      </div>
+    </div>
+  </section>
 
-<section class="card">
-  <h2>🌷 حكايات الرفق الجميلة</h2>
-  <p>
-    هنا ستظهر الفيديوهات المتميزة
-    بعد مراجعتها واعتماد نشرها.
-  </p>
-</section>
+  <section id="stories" class="story-area">
+    <h2>📺 قصص ملهمة</h2>
+    <p>هنا ستظهر فيديوهات الطلاب والطالبات بعد موافقة المشرفة.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="emoji">🎬</div>
+        <h3>حكايات الرفق</h3>
+        <p>قريبًا نعرض أجمل المشاركات المعتمدة.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="activities" class="activity-area">
+    <h2>🎨 أنشطة الرفق</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="emoji">🌷</div>
+        <h3>كلمة طيبة</h3>
+        <p>قل اليوم كلمة جميلة لشخص تحبه.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">🧸</div>
+        <h3>مساعدة صديق</h3>
+        <p>ساعد أحد أصدقائك في عمل لطيف.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">🦋</div>
+        <h3>موقف رفيق</h3>
+        <p>احكِ موقفًا استخدمت فيه الرفق.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="share">
+    <h2>🎥 شارك قصتك</h2>
+    <p>اختر القسم والفصل والاسم، ثم جهز فيديو مشاركتك.</p>
+
+    <div class="form-box">
+      <label for="gender">👦🏻👧🏻 القسم</label>
+      <select id="gender">
+        <option value="">اختاري القسم</option>
+        <option value="boys">بنين 👦🏻</option>
+        <option value="girls">بنات 👧🏻</option>
+      </select>
+
+      <label for="classroom">🏫 الفصل</label>
+      <select id="classroom" disabled>
+        <option value="">اختاري القسم أولًا</option>
+      </select>
+
+      <label for="student">🌸 اسم الطالب أو الطالبة</label>
+      <select id="student" disabled>
+        <option value="">اختاري الفصل أولًا</option>
+      </select>
+
+      <label for="videoFile">🎥 فيديو القصة</label>
+      <input id="videoFile" type="file" accept="video/*">
+      <video id="preview" controls playsinline></video>
+
+      <div class="notice">
+        🔒 هذه نسخة تجريبية للواجهة.
+        لم يُفعّل إرسال الفيديوهات بعد.
+        لن يُنشر أي فيديو تلقائيًا.
+        وعند تفعيل الخدمة ستُراجع المشاركات
+        قبل عرضها للجميع، مع مراعاة موافقة ولي الأمر.
+      </div>
+
+      <button class="btn" type="button" id="sendBtn">
+        💌 إرسال مشاركتي
+      </button>
+      <div id="message" role="status"></div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <p>🏫 مدارس الأندلس الصغيرة العالمية</p>
-  <p>🌸 إشراف وتنفيذ البرنامج 🌸</p>
-  <strong>الموجهة الطلابية / أمل الشهراني</strong>
+  💗 رفقي يحكي قصتي
+  <div>مدارس الأندلس الصغيرة العالمية</div>
+  <small>بالرفق نصنع أجمل الحكايات 🌷</small>
 </footer>
+
+<script>
+// ستضاف الأسماء الصحيحة بعد تجهيز مصدر بيانات آمن.
+// لا نضع أسماء الأطفال الكاملة داخل كود الموقع العام.
+const students = {
+  boys: {},
+  girls: {}
+};
+
+const classes = {
+  boys: [
+    "أول ابتدائي / أ (تحفيظ)",
+    "أول ابتدائي / ب",
+    "أول ابتدائي / ج",
+    "أول ابتدائي / د"
+  ],
+  girls: [
+    "أول ابتدائي / أ (تحفيظ)",
+    "أول ابتدائي / ب",
+    "أول ابتدائي / ج",
+    "أول ابتدائي / د",
+    "أول ابتدائي / هـ"
+  ]
+};
+
+const gender = document.getElementById("gender");
+const classroom = document.getElementById("classroom");
+const student = document.getElementById("student");
+const videoFile = document.getElementById("videoFile");
+const preview = document.getElementById("preview");
+const message = document.getElementById("message");
+
+function resetSelect(element, text) {
+  element.replaceChildren(new Option(text, ""));
+  element.disabled = true;
+}
+
+gender.addEventListener("change", () => {
+  resetSelect(classroom, "اختاري الفصل");
+  resetSelect(student, "اختاري الفصل أولًا");
+
+  if (!gender.value) return;
+
+  classes[gender.value].forEach(name => {
+    classroom.add(new Option(name, name));
+  });
+  classroom.disabled = false;
+});
+
+classroom.addEventListener("change", () => {
+  resetSelect(student, "اختاري الاسم");
+  if (!classroom.value) return;
+
+  const names = students[gender.value][classroom.value] || [];
+
+  if (!names.length) {
+    resetSelect(student, "الأسماء ستضاف لاحقًا");
+    return;
+  }
+
+  names.forEach(name => {
+    student.add(new Option(name, name));
+  });
+  student.disabled = false;
+});
+
+let videoUrl = null;
+
+videoFile.addEventListener("change", () => {
+  if (videoUrl) URL.revokeObjectURL(videoUrl);
+  videoUrl = null;
+  preview.pause();
+  preview.removeAttribute("src");
+  preview.style.display = "none";
+  message.textContent = "";
+
+  const file = videoFile.files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith("video/")) {
+    message.textContent = "الرجاء اختيار ملف فيديو.";
+    videoFile.value = "";
+    return;
+  }
+
+  videoUrl = URL.createObjectURL(file);
+  preview.src = videoUrl;
+  preview.style.display = "block";
+});
+
+document.getElementById("sendBtn").addEventListener("click", () => {
+  message.textContent =
+    "🌷 هذه معاينة تجريبية فقط. لم يتم إرسال الفيديو. سنفعّل الإرسال الآمن وموافقة المشرفة في المرحلة التالية.";
+});
+</script>
 
 </body>
 </html>
